@@ -1,0 +1,27 @@
+#!/bin/bash
+# Script 1: System Identity Report
+# This script shows basic system info
+
+name="Narendra"
+software="MySQL"
+
+# collecting system details
+kernel_version=$(uname -r)
+current_user=$(whoami)
+uptime_info=$(uptime -p)
+today_date=$(date)
+
+# getting distro name (simple way)
+distro_name=$(grep PRETTY_NAME /etc/os-release | cut -d= -f2 | tr -d '"')
+
+echo "-----------------------------"
+echo " Open Source Audit Project"
+echo "-----------------------------"
+echo "Student Name : $name"
+echo "Software     : $software"
+echo "OS           : $distro_name"
+echo "Kernel       : $kernel_version"
+echo "User         : $current_user"
+echo "Uptime       : $uptime_info"
+echo "Date         : $today_date"
+echo "License      : GPL (Open Source)"

@@ -1,0 +1,36 @@
+#!/bin/bash
+# Script 2: Checking if MySQL is installed
+
+pkg="mysql-server"
+
+echo "Checking package..."
+
+# checking installation
+if dpkg -l | grep -q $pkg
+then
+    echo "$pkg is installed"
+    
+    # showing version info
+    dpkg -l | grep $pkg
+else
+    echo "$pkg is not installed"
+fi
+
+# small description using case
+case $pkg in
+    mysql-server)
+        echo "MySQL is used for storing data in many websites"
+        ;;
+    apache2)
+        echo "Apache is a web server"
+        ;;
+    firefox)
+        echo "Firefox is a browser"
+        ;;
+    vlc)
+        echo "VLC plays media files"
+        ;;
+    *)
+        echo "No description available"
+        ;;
+esac
